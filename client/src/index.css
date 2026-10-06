@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FFFFFF;
+  --color-soft-bg: #FAFAF8;
+  --color-border: #E6E4DF;
+  --color-text-main: #14171F;
+  --color-text-muted: #5B6270;
+  --color-accent: #C9622F;
+  --color-accent-hover: #B35528;
+  --color-dark-panel: #0F1522;
+  --color-success: #2F7D5B;
+  --color-danger: #B4412F;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-button: 6px;
+  --radius-input: 6px;
+  --radius-card: 8px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white px-4 py-2 rounded-button font-medium transition-colors hover:bg-accent-hover active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply border border-border bg-white text-text-main px-4 py-2 rounded-button font-medium transition-colors hover:bg-soft-bg active:scale-[0.98];
+  }
+  .input-field {
+    @apply border border-border rounded-input px-3 py-2 bg-white text-text-main focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all placeholder:text-text-muted;
+  }
+  .card {
+    @apply bg-white border border-border rounded-card p-4 shadow-sm;
+  }
+}
